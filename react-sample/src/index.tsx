@@ -9,6 +9,8 @@ import Message from './components/Message';
 import Parent from './components/ContainerSample';
 import Page from './components/ContextSample';
 import Counter from './components/ReduserSample';
+import MemoParent from './components/MemoSample';
+import MemoCallbackSample from './components/MemoCallbackSample';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -21,6 +23,8 @@ root.render(
     <Parent />
     <Page />
     <Counter initialValue={0}/>
+    <MemoParent />
+    <MemoCallbackSample />
   </React.StrictMode>
 );
 
