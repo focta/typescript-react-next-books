@@ -11,6 +11,7 @@ import Page from './components/ContextSample';
 import Counter from './components/ReduserSample';
 import MemoParent from './components/MemoSample';
 import MemoCallbackSample from './components/MemoCallbackSample';
+import Clock from './components/Clock';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -25,6 +26,7 @@ root.render(
     <Counter initialValue={0}/>
     <MemoParent />
     <MemoCallbackSample />
+    <Clock />
   </React.StrictMode>
 );
 
