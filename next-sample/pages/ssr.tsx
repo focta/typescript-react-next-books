@@ -1,10 +1,15 @@
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import ButtonSample from "../components/ButtonSample";
 
 type SSRProps = {
   message: string;
 };
+
+const SampleButtonOnClick = () => {
+    alert("押されました")
+}
 
 const ssr: NextPage<SSRProps> = (props) => {
   const { message } = props;
@@ -30,6 +35,12 @@ const ssr: NextPage<SSRProps> = (props) => {
             Button
           </button>
         </Link>
+        <ButtonSample
+            label=""
+            text="サンプルのボタンです"
+            disabled={false}
+            onClick={SampleButtonOnClick}
+            />
       </main>
     </div>
   );
