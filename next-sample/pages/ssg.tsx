@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 
 type SSGProps ={}
 
@@ -14,6 +15,7 @@ const ssg: NextPage<SSGProps> = (props) => {
                 <p>
                     このページは静的サイト生成によって、ビルド時に生成されたページです。
                 </p>
+                <Link href="/ssr">Go To SSR Page</Link>
             </main>
         </div>
     );
