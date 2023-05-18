@@ -1,5 +1,6 @@
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 
 type SSRProps = {
   message: string;
@@ -19,6 +20,16 @@ const ssr: NextPage<SSRProps> = (props) => {
           このページはサーバーサイドレンダリングによってアクセス時にサーバーで描画されたページです。
         </p>
         <p>{message}</p>
+        <Link
+          href={{
+            pathname: "/ssg",
+            query: { keyword: "hello" },
+          }}
+        >
+          <button>
+            Button
+          </button>
+        </Link>
       </main>
     </div>
   );
