@@ -1,32 +1,24 @@
-import { ComponentMeta, Story } from "@storybook/react";
-import { StyledButton, StyledButtonProps } from "../../components/StyledButton";
+import type { Meta, StoryObj } from "@storybook/react";
+import { StyledButton } from "../../components/StyledButton";
 
-export default {
+// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+const meta: Meta<typeof StyledButton> = {
   title: "StyledButton",
   component: StyledButton,
-  argTypes: { onClick: { action: 'clicked' } },
-} as ComponentMeta<typeof StyledButton>;
-
-export const Primary: Story<StyledButtonProps> = (props) => {
-  return (
-    <StyledButton {...props} variant="primary">
-      Primary
-    </StyledButton>
-  );
+  tags: ["autodocs"],
 };
 
-export const Success: Story<StyledButtonProps> = (props) => {
-  return (
-    <StyledButton {...props} variant="success">
-      Success
-    </StyledButton>
-  );
+export default meta;
+type Story = StoryObj<typeof StyledButton>;
+
+export const Primary: Story = {
+  render: () => <StyledButton variant="primary">Primary</StyledButton>,
 };
 
-export const Transparent: Story<StyledButtonProps> = (props) => {
-  return (
-    <StyledButton {...props} variant="transparent">
-      Transparent
-    </StyledButton>
-  );
+export const Success: Story = {
+    render: () => <StyledButton variant="success">Success</StyledButton>,
+};
+
+export const Transparent: Story = {
+    render: () => <StyledButton variant="transparent">Transparent</StyledButton>,
 };
