@@ -2,6 +2,7 @@ import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import ButtonSample from "../components/ButtonSample";
+import CountButtonSample from "../components/CountButtonSample";
 
 type SSRProps = {
   message: string;
@@ -41,6 +42,7 @@ const ssr: NextPage<SSRProps> = (props) => {
             disabled={false}
             onClick={SampleButtonOnClick}
             />
+        <CountButtonSample label={"containertコンポーネントのサンプル"} maximum={10} />
       </main>
     </div>
   );
